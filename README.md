@@ -1,4 +1,4 @@
-<center> <h1>Serverless Playground :building_construction:</h1> </center>
+# Serverless Playground :building_construction:
 
 ![serverless](https://user-images.githubusercontent.com/11817331/116174930-c5221980-a6e5-11eb-9bb6-c3f38ded1f16.gif)
 
@@ -23,8 +23,7 @@
 
 ### Application Architecture Draw
 
-:construction
-
+:construction:
 
 ### Built With
 
