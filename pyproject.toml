@@ -5,8 +5,9 @@ description = ""
 authors = ["Vinicius <vinigmoraes@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "3.8"
 jsonschema = "^3.2.0"
+boto3 = "^1.17.61"
 
 [tool.poetry.dev-dependencies]
 

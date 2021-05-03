@@ -1,5 +1,5 @@
-from application.book.response.get_book_response import GetBookResponse
-from core.domain.book import Book
+from web.book.response.get_book_response import GetBookResponse
+from domain.book import Book
 
 
 def get(event, context):
