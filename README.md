@@ -8,6 +8,14 @@ ____
 
 *The phrase “serverless” doesn’t mean servers are no longer involved. It simply means that developers no longer have to think "that much" about them. Computing resources get used as services without having to manage around physical capacities or limits.*
 
+### Deploy
+
+To deploy application, just run the code below:
+
+```
+ sls deploy -v 
+```
+
 ### Pros & Cons
 
 **Pros**
