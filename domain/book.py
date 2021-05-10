@@ -1,16 +1,26 @@
-import json
 import uuid
+
+from application.functions.book.request.create_book_request import CreateBookRequest
 
 
 class Book:
-    id = uuid.uuid4()
+    id: str
     title: str
 
-    def __init__(self, title):
+    def __init__(self, book_id, title):
+        self.id = book_id
         self.title = title
 
-    def to_json(self):
-        return json.dumps({
-            "id": str(self.id),
-            "title": self.title
-        })
+    @staticmethod
+    def create(request: CreateBookRequest):
+        return Book(
+            book_id=uuid.uuid4(),
+            title=request.title
+        )
+
+    @staticmethod
+    def from_json(json):
+        return Book(
+            book_id=json['id'],
+            title=json['title']
+        )

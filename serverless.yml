@@ -24,14 +24,14 @@ provider:
 
 functions:
   create_book:
-    handler: playground/book/functions/create_book.execute
+    handler: application/functions/create_book.execute
     events:
       - http:
           path: books
           method: post
           cors: true
   get_book_by_id:
-    handler: playground/book/functions/get_book_by_id.get
+    handler: application/functions/get_book_by_id.get
     events:
       - http:
           path: books/{id}
