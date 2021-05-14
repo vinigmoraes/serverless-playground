@@ -13,7 +13,11 @@ logger.setLevel(logging.INFO)
 class BookRepository:
     def __init__(self, table_name=None):
         self._table_name = os.getenv("BOOK_TABLE_NAME", table_name)
-        self._table = boto3.resource("dynamodb").Table(self._table_name)
+        self._table = boto3.resource(
+            "dynamodb",
+            aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+            aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
+        ).Table(self._table_name)
 
     def save(self, book: Book):
         book_json = {

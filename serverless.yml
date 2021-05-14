@@ -1,3 +1,7 @@
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline
+
 service: serverless-playground
 frameworkVersion: '2'
 
@@ -53,3 +57,16 @@ resources:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
         TableName: ${self:provider.environment.BOOK_TABLE_NAME}
+
+custom:
+  dynamodb:
+    stages:
+      - dev
+    start:
+      port: 8000
+      inMemory: true
+      heapInitial: 200m
+      heapMax: 1g
+      migrate: true
+      seed: true
+      convertEmptyValues: true
