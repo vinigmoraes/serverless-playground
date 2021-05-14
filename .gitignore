@@ -2,7 +2,7 @@
 .serverless
 
 ## Cache
-.pytest_cache
+__pycache__
 
 ## NPM
 package-lock.json
