@@ -41,6 +41,16 @@ To deploy application, just run the code below:
 - Cold start can be a problem
 - Have a lot o lambdas working can be a pricing problem
 
+### Application Design
+
+The application is designed using `package by feature`, basically we create package for which feature we have in the application,
+in this case we have `books` as package and all division of classes inside it, if it was necessary we create a new package
+of feature needed.
+
+Example:
+
+![Screen Shot 2021-05-20 at 21 52 29](https://user-images.githubusercontent.com/11817331/119066230-b9103b80-b9b5-11eb-9363-edcf76fbeaac.png)
+
 ### Application Architecture Draw
 
 :construction:
