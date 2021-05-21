@@ -8,6 +8,16 @@ ____
 
 *The phrase “serverless” doesn’t mean servers are no longer involved. It simply means that developers no longer have to think "that much" about them. Computing resources get used as services without having to manage around physical capacities or limits.*
 
+### Running locally
+
+You need to create your profile at `/aws/credentials` called `serverless-admin`
+
+To run application locally execute the code below:
+
+```
+ make start-serverless-offline:
+```
+
 ### Deploy
 
 To deploy application, just run the code below:
