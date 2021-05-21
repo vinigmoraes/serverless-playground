@@ -3,10 +3,10 @@ from unittest.mock import MagicMock
 import pytest
 from _pytest.fixtures import fixture
 
-from domain.book import Book
-from domain.exceptions.book_not_found_exception import BookNotFoundException
-from domain.usecases.find_book_usecase import FindBookUseCase
-from infrastructure.book_repository import BookRepository
+from books.domain.book import Book
+from books.domain.exceptions.book_not_found_exception import BookNotFoundException
+from books.domain.usecases.find_book_usecase import FindBookUseCase
+from books.infrastructure.book_repository import BookRepository
 
 
 class TestFindBookUseCase:

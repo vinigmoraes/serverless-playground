@@ -1,6 +1,6 @@
 import uuid
 
-from application.functions.book.request.create_book_request import CreateBookRequest
+from books.application.functions.request.create_book_request import CreateBookRequest
 
 
 class Book:

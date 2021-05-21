@@ -1,6 +1,6 @@
-from domain.book import Book
-from infrastructure.book_repository import BookRepository
-from application.functions.book.request.create_book_request import CreateBookRequest
+from books.domain.book import Book
+from books.infrastructure.book_repository import BookRepository
+from books.application.functions.request.create_book_request import CreateBookRequest
 
 
 class CreateBookUseCase:

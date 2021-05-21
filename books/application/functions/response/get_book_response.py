@@ -1,6 +1,6 @@
 import json
 
-from domain.book import Book
+from books.domain.book import Book
 
 
 class GetBookResponse:
