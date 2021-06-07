@@ -1,6 +1,6 @@
 from jsonschema import validate
 
-from books.application.functions.request.schemas.create_book_schema import CREATE_BOOK_SCHEMA
+from books.application.functions.request.validation.schemas.create_book_schema import CREATE_BOOK_SCHEMA
 
 
 class CreateBookRequest:
