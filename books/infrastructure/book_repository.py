@@ -4,7 +4,7 @@ from typing import Optional
 
 import boto3
 
-from books.domain.book import Book
+from books.core.domain.book import Book
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)

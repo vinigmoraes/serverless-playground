@@ -2,8 +2,8 @@ import json
 import logging
 
 from books.application.functions.response.get_book_response import GetBookResponse
-from books.domain.exceptions.book_not_found_exception import BookNotFoundException
-from books.domain.usecases.find_book_usecase import FindBookUseCase
+from books.core.domain.exceptions.book_not_found_exception import BookNotFoundException
+from books.core.usecases.find_book_usecase import FindBookUseCase
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)

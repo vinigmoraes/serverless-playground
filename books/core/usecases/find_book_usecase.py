@@ -1,6 +1,6 @@
 import logging
 
-from books.domain.exceptions.book_not_found_exception import BookNotFoundException
+from books.core.domain.exceptions.book_not_found_exception import BookNotFoundException
 from books.infrastructure.book_repository import BookRepository
 
 logger = logging.getLogger(__name__)
