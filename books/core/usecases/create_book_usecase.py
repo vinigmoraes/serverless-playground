@@ -1,4 +1,4 @@
-from books.domain.book import Book
+from books.core.domain.book import Book
 from books.infrastructure.book_repository import BookRepository
 from books.application.functions.request.create_book_request import CreateBookRequest
 

@@ -3,7 +3,7 @@ class ApplicationCall:
     body: str
 
     @staticmethod
-    def respond(status_code: int, response):
+    def respond(status_code: int, response=None):
         return {
             "statusCode": status_code,
             "body": response.to_json()

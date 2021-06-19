@@ -5,6 +5,10 @@ plugins:
 service: serverless-playground
 frameworkVersion: '2'
 
+package:
+  individually: true
+  excludeDevDependencies: false
+
 provider:
   name: aws
   runtime: python3.8
@@ -13,6 +17,8 @@ provider:
   lambdaHashingVersion: 20201221
   environment:
     BOOK_TABLE_NAME: books
+    APPLICATION_BUCKET: serverless-playground-books-api
+    BOOK_COVER_IMAGE_FOLDER: books-cover-image
   iam:
     role:
       statements:
@@ -41,6 +47,8 @@ functions:
           path: books/{id}
           method: get
           cors: true
+  add_book_cover_image:
+    handler: books/application/functions/add_cover_image_handler.execute
 resources:
   Resources:
     BooksTable:

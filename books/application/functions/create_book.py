@@ -5,7 +5,7 @@ from books.application.functions.request.create_book_request import CreateBookRe
 from books.application.functions.request.validation.validation_error_response import ValidationErrorResponse
 from books.application.functions.request.validation.validator_request import ValidatorRequest
 from books.application.functions.response.create_book_response import CreateBookResponse
-from books.domain.usecases.create_book_usecase import CreateBookUseCase
+from books.core.usecases.create_book_usecase import CreateBookUseCase
 
 
 def execute(event, context, use_case: CreateBookUseCase = None):
