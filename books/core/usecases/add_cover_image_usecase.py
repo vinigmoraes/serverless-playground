@@ -18,10 +18,14 @@ class AddCoverImageUseCase:
 
         book_cover_image = base64.b64decode(base64_cover_image)
 
-        filename = open(f"{book.title}.png", "wb")
+        filename = open(f"{book.id}.png", "wb")
         filename.write(book_cover_image)
         filename.close()
 
-        self.bucket_repository.upload(filename)
+        self.bucket_repository.upload(f"{book.id}.png", book_id)
+
+        os.remove(f"{book.id}.png")
 
         book.add_cover_image_link()
+
+        self.book_repository.save(book)

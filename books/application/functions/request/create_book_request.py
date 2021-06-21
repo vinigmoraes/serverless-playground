@@ -7,7 +7,6 @@ class CreateBookRequest:
     title: str
     isbn: str
     hardcover: bool
-    book_cover_image: str
     pages: int
     author: str
 
@@ -16,7 +15,6 @@ class CreateBookRequest:
         cls.title = json_body["title"]
         cls.isbn = json_body["isbn"]
         cls.hardcover = json_body['hardcover']
-        cls.book_cover_image = json_body['book_cover_image']
         cls.pages = json_body['pages']
         cls.author = json_body['author']
 

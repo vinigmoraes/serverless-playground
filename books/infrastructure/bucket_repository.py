@@ -1,8 +1,9 @@
-from logging import Logger
+import logging
 
 import boto3
 
-logger = Logger(__name__)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 
 class BucketRepository:
@@ -12,7 +13,7 @@ class BucketRepository:
         self.bucket_name = bucket_name
         self.folder = folder
 
-    def upload(self, file):
-        logger.info(f"Uploading file: {file} to bucket: {self.bucket_name}")
+    def upload(self, file, book_id):
+        logger.info(f"Uploading file: {file} to bucket: {self.bucket_name}/{self.folder}")
 
-        self._s3_client.put_object(Body=file, Bucket=f"{self.bucket_name}/{self.folder}")
+        self._s3_client.upload_file(file, f"{self.bucket_name}", f"{self.folder}/{book_id}.png")

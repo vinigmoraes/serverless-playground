@@ -1,30 +1,40 @@
 import os
 import uuid
+from dataclasses import dataclass
 
 from books.application.functions.request.create_book_request import CreateBookRequest
 
 
+@dataclass
 class Book:
-    id: str
+    id: uuid
     title: str
+    isbn: str
+    hardcover: bool
+    pages: int
+    author: str
     cover_image_link: str = None
-
-    def __init__(self, book_id, title):
-        self.id = book_id
-        self.title = title
 
     @staticmethod
     def create(request: CreateBookRequest):
         return Book(
-            book_id=uuid.uuid4(),
-            title=request.title
+            id=uuid.uuid4(),
+            title=request.title,
+            isbn=request.isbn,
+            hardcover=request.hardcover,
+            pages=request.pages,
+            author=request.author
         )
 
     @staticmethod
     def from_json(json):
         return Book(
-            book_id=json['id'],
+            id=json['id'],
             title=json['title'],
+            isbn=json['isbn'],
+            hardcover=json['hardcover'],
+            pages=json['pages'],
+            author=json['author']
         )
 
     def add_cover_image_link(self):

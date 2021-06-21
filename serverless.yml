@@ -1,7 +1,6 @@
 plugins:
   - serverless-dynamodb-local
   - serverless-offline
-
 service: serverless-playground
 frameworkVersion: '2'
 
@@ -17,7 +16,7 @@ provider:
   lambdaHashingVersion: 20201221
   environment:
     BOOK_TABLE_NAME: books
-    APPLICATION_BUCKET: serverless-playground-books-api
+    APPLICATION_BUCKET: serverless-playground-books
     BOOK_COVER_IMAGE_FOLDER: books-cover-image
   iam:
     role:
@@ -49,6 +48,11 @@ functions:
           cors: true
   add_book_cover_image:
     handler: books/application/functions/add_cover_image_handler.execute
+    events:
+      - http:
+          path: books/{id}/cover-image
+          method: post
+          cors: true
 resources:
   Resources:
     BooksTable:

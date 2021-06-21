@@ -1,6 +1,7 @@
 import json
 import logging
 
+from books.application.application_call import ApplicationCall
 from books.application.functions.response.get_book_response import GetBookResponse
 from books.core.domain.exceptions.book_not_found_exception import BookNotFoundException
 from books.core.usecases.find_book_usecase import FindBookUseCase
@@ -26,11 +27,4 @@ def get(event, context, use_case: FindBookUseCase = None):
             "body": json.dumps({'message': e.message})
         }
 
-    response = GetBookResponse.create(book)
-
-    logger.info(f"Response of find book: {response}")
-
-    return {
-        "statusCode": 200,
-        "body": response
-    }
+    return ApplicationCall.respond(status_code=201, response=GetBookResponse(book))

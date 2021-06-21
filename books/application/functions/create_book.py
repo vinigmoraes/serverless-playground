@@ -22,4 +22,4 @@ def execute(event, context, use_case: CreateBookUseCase = None):
 
     book = use_case.create(request)
 
-    return ApplicationCall.respond(status_code=201, response=CreateBookResponse(book.id, book.title))
+    return ApplicationCall.respond(status_code=201, response=CreateBookResponse(book_id=book.id))
