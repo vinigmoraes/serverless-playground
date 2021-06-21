@@ -1,13 +1,12 @@
-import json
+from dataclasses import dataclass
+
+from dataclasses_json import dataclass_json
 
 
+@dataclass_json
+@dataclass
 class CreateBookResponse:
     id: str
-    title: str
 
-    def __init__(self, book_id, title: str):
-        self.id = str(book_id)
-        self.title = title
-
-    def to_json(self):
-        return json.dumps(self.__dict__)
+    def __init__(self, book_id):
+        self.id = book_id

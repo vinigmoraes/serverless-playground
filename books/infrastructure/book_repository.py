@@ -22,18 +22,23 @@ class BookRepository:
     def save(self, book: Book):
         book_json = {
             "id": str(book.id),
-            "title": book.title
+            "title": book.title,
+            "isbn": book.isbn,
+            "hardcover": book.hardcover,
+            "pages": book.pages,
+            "author": book.author,
+            "cover_image_link": book.cover_image_link
         }
 
         self._table.put_item(Item=book_json)
 
     def find_by(self, book_id) -> Optional[Book]:
-        logger.info(f"Searching in database for book: {book_id}")
+        logger.info(f"Searching on database for book: {book_id}")
 
         try:
             response = self._table.get_item(Key={"id": book_id})
 
-            logger.info(f"Book: {response['Item']} found at database")
+            logger.info(f"Book: {response['Item']} found on database")
         except KeyError:
             logger.info("Item not found in database")
             return None
