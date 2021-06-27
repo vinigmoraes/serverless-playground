@@ -6,7 +6,6 @@ frameworkVersion: '2'
 
 package:
   individually: true
-  excludeDevDependencies: false
 
 provider:
   name: aws
