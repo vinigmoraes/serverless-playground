@@ -3,9 +3,13 @@ integration-test: start-serverless-offline access-integration-test run-test
 start-serverless-offline:
 	AWS_PROFILE=serverless-admin serverless offline
 
-access-integration-test:
-	cd test/integration
+deploy: export-dependencies deploy-application
 
-run-test:
-	pytest
+export-dependencies:
+	poetry export -f requirements.txt > requirements.txt --without-hashes
+
+deploy-application:
+	serverless deploy
+
+
 
