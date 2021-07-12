@@ -6,7 +6,9 @@ ____
 
 ### What is Serverless ?
 
-*The phrase “serverless” doesn’t mean servers are no longer involved. It simply means that developers no longer have to think "that much" about them. Computing resources get used as services without having to manage around physical capacities or limits.*
+*The phrase “serverless” doesn’t mean servers are no longer involved. It simply means that developers no longer have to
+think "that much" about them. Computing resources get used as services without having to manage around physical
+capacities or limits.*
 
 ### Running locally
 
@@ -23,12 +25,13 @@ To run application locally execute the code below:
 To deploy application, just run the code below:
 
 ```
- sls deploy -v 
+ make deploy 
 ```
 
 ### Pros & Cons
 
 **Pros**
+
 - You do not need to manager servers, only serverless functions
 - Run on-demand
 - Scaling is automated (Limited by your available functions)
@@ -41,17 +44,21 @@ To deploy application, just run the code below:
 - Cold start can be a problem
 - Have a lot o lambdas working can be a pricing problem
 
-### Application Design
+## Application
 
-The application is designed using `package by feature`, basically we create package for which feature we have in the application,
-in this case we have `books` as package and all division of classes inside it, if it was necessary we create a new package
-of feature needed.
+This application provides a CRUD for books management 
+
+### application Design
+
+The application was designed using `package by feature`, basically we create package for which feature we have in the
+application, in this case we have `books` as package and all division of classes inside it, if it was necessary we
+create a new package of feature needed.
 
 Example:
 
 ![Screen Shot 2021-05-20 at 21 52 29](https://user-images.githubusercontent.com/11817331/119066230-b9103b80-b9b5-11eb-9363-edcf76fbeaac.png)
 
-### Application Architecture Draw
+## application Architecture Draw
 
 :construction:
 
@@ -60,4 +67,3 @@ Example:
 - [Python](https://www.python.org/) - Programming language
 - [Pycharm](https://www.jetbrains.com/pycharm/) - IDE
 - [Poetry](https://python-poetry.org/) - Dependency Management
-- [Docker](https://www.docker.com/) - Containerization Platform
