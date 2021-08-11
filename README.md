@@ -10,9 +10,25 @@ ____
 think "that much" about them. Computing resources get used as services without having to manage around physical
 capacities or limits.*
 
-### Running locally
+### Configuration
 
-You need to create your profile at `/aws/credentials` called `serverless-admin`
+It is necessary to create user called *serverless-admin* in your AWS account
+
+You need to create your profile at `/.aws/credentials` called `serverless-admin`
+
+```
+[serverless-admin]
+aws_access_key_id = your access key
+aws_secret_access_key = your secret key 
+```
+
+
+**How to create**
+
+In your AWS Console access IAM > Users > Add Users
+
+
+### Running locally
 
 To run application locally execute the code below:
 
